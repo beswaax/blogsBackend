@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 require("express-async-errors");
-const config = require("./utils/config");
+const configs = require("./utils/configs");
 const blogsRouter = require("./controllers/blogs");
 const logger = require("./utils/logger");
 const mongoose = require("mongoose");
@@ -15,7 +15,7 @@ const middleware = require("./utils/middleware");
 logger.info("Connecting to MongoDB");
 
 mongoose
-  .connect(config.MONGODB_URI, {
+  .connect(configs.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

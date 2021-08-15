@@ -1,8 +1,8 @@
 const http = require("http");
 const app = require("./app");
-const config = require("./utils/config");
+const configs = require("./utils/configs");
 const logger = require("./utils/logger");
 
 const server = http.createServer(app);
 
-server.listen(config.PORT);
+server.listen(configs.PORT);
